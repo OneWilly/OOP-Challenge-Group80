@@ -1,0 +1,46 @@
+class Pet:
+    def __init__(self, name):
+        """Initialize the Pet class with default values."""
+        self.name = name
+        self.hunger = 5  # Default hunger level
+        self.energy = 5  # Default energy level
+        self.happiness = 5  # Default happiness level
+        self.tricks = []  # List to store learned tricks
+
+    def eat(self):
+        """Reduces hunger and increases happiness."""
+        self.hunger = max(0, self.hunger - 3)  # Hunger cannot go below 0
+        self.happiness = min(10, self.happiness + 1)  # Happiness cannot exceed 10
+        print(f"{self.name} ate some food. Hunger: {self.hunger}, Happiness: {self.happiness}")
+
+    def sleep(self):
+        """Increases energy."""
+        self.energy = min(10, self.energy + 5)  # Energy cannot exceed 10
+        print(f"{self.name} took a nap. Energy: {self.energy}")
+
+    def play(self):
+        """Decreases energy, increases happiness, and increases hunger."""
+        if self.energy >= 2:
+            self.energy -= 2  # Playing decreases energy by 2
+            self.happiness = min(10, self.happiness + 2)  # Happiness cannot exceed 10
+            self.hunger = min(10, self.hunger + 1)  # Hunger cannot exceed 10
+            print(f"{self.name} played and had fun! Energy: {self.energy}, Happiness: {self.happiness}, Hunger: {self.hunger}")
+        else:
+            print(f"{self.name} is too tired to play. Energy: {self.energy}")
+
+    def get_status(self):
+        """Prints the current state of the pet."""
+        print(f"Pet Status - Name: {self.name}, Hunger: {self.hunger}, Energy: {self.energy}, Happiness: {self.happiness}")
+
+    def train(self, trick):
+        """Teaches the pet a new trick."""
+        self.tricks.append(trick)
+        self.happiness = min(10, self.happiness + 1)  # Training makes the pet happy
+        print(f"{self.name} learned a new trick: {trick}. Happiness: {self.happiness}")
+
+    def show_tricks(self):
+        """Prints all learned tricks."""
+        if self.tricks:
+            print(f"{self.name} knows the following tricks: {', '.join(self.tricks)}")
+        else:
+            print(f"{self.name} hasn't learned any tricks yet.")
