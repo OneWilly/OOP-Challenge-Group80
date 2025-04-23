@@ -1,7 +1,7 @@
 from pet import Pet  # Import the Pet class from pet.py
 
-# Create a pet object with a name
-my_pet = Pet("Buddy")  # Replace "Buddy" with your pet's name
+# Create a pet object with a name Pixel
+my_pet = Pet("Pixel") 
 
 # Display the pet's initial status
 print("Initial Pet Status:")

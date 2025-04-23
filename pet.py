@@ -13,9 +13,9 @@ class Pet:
         - tricks: A list to store tricks learned by the pet
         """
         self.name = name
-        self.hunger = 5  # Default hunger level
-        self.energy = 5  # Default energy level
-        self.happiness = 5  # Default happiness level
+        self.hunger = 8  # Default hunger level
+        self.energy = 6  # Default energy level
+        self.happiness = 3  # Default happiness level
         self.tricks = []  # Empty list to store learned tricks
 
     def eat(self):
